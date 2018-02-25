@@ -1,0 +1,8 @@
+{
+    "name": "ryounus/oop",
+    "require": {},
+    "autoload": {
+        "psr-4": {"RYounus\\": "src/"}
+    }
+
+}
