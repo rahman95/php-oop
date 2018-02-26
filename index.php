@@ -1,14 +1,15 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+use RYounus\TimeLine;
 use RYounus\User;
-use \RYounus\TwitterPost;
+use RYounus\TLPost;
+
 
 $user = new User('Ray', 'ray@mail.com');
-$user1 = new User('Rayyy', 'rayyy@mail.com');
-
-$post = new TwitterPost();
+$tl = new TimeLine($user);
+$post = new TLPost();
 $post->buildContent('test message', $user);
-$post->post();
+$tl->post($post);
 
-var_dump($post);
+var_dump($tl);
