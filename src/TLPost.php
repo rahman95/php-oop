@@ -13,4 +13,14 @@ Class TLPost implements Post {
         $this->messageBody = $content;
         $this->user = $user;
     }
+
+    public function markPosted()
+    {
+        $this->posted_at = time();
+    }
+
+    public function markDeleted()
+    {
+        $this->deleted_at = time();
+    }
 }

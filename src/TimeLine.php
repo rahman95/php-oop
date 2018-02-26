@@ -4,6 +4,7 @@ namespace RYounus;
 
 class TimeLine{
     protected $user;
+    protected $posts = [];
 
     public function __construct(User $user)
     {
@@ -11,17 +12,19 @@ class TimeLine{
     }
 
     public function post(Post $post){
-        if(!$post->posted_at){
-            $post->posted_at = time();
+        if (!in_array($post, $this->posts, true)) {
+            $this->posts[] = $post;
         }
+        $post->markPosted();
         return 'added to TL';
     }
 
     public function delete(Post $post)
     {
-        if($post->posted_at) {
-            $post->deleted_at = time();
+        if(($key = array_search($post, $this->posts, TRUE)) !== FALSE) {
+            unset($this->posts[$key]);
         }
-        return 'deleted to TL';
+        $post->markDeleted();
+        return 'deleted from TL';
     }
 }

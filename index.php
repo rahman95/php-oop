@@ -11,5 +11,6 @@ $tl = new TimeLine($user);
 $post = new TLPost();
 $post->buildContent('test message', $user);
 $tl->post($post);
+$tl->delete($post);
 
 var_dump($tl);
