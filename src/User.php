@@ -2,6 +2,8 @@
 namespace RYounus;
 
 Class User {
+    use HelloWorld;
+
     protected $name;
     protected $email;
     protected $level;
