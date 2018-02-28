@@ -2,7 +2,7 @@
 
 namespace RYounus;
 
-abstract Class Messages
+abstract Class Message
 {
     protected $sender;
     protected $receiver;

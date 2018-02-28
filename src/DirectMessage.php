@@ -2,7 +2,7 @@
 
 namespace RYounus;
 
-class DirectMessage extends Messages
+class DirectMessage extends Message
 {
     public function getType(){
         return 'direct';
